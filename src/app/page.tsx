@@ -1,4 +1,4 @@
-use client
+"use client";
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
 import NavbarLayoutFloatingInline from '@/components/navigation/NavbarLayoutFloatingInline';
 import SplitHero from '@/components/sections/layouts/hero/SplitHero';
@@ -13,7 +13,6 @@ export default function Home() {
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
           logoSrc="/images/logo.svg"
-          logoAlt="Xeven Solutions"
           navItems={[{ name: 'Hero', id: 'hero' }, { name: 'About', id: 'about' }, { name: 'How to Buy', id: 'how-to-buy' }, { name: 'Tokenomics', id: 'tokenomics' }, { name: 'Footer', id: 'footer' }]}
           buttonText="Get Started"
           className="bg-transparent text-white"
@@ -37,9 +36,7 @@ export default function Home() {
         />
       </div>
       <div id="how-to-buy" data-section="how-to-buy">
-        <HowToBuy2D
-          variant="simple"
-        />
+        <HowToBuy2D variant="simple" />
       </div>
       <div id="tokenomics" data-section="tokenomics">
         <TextGridTokenomics
