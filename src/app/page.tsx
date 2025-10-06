@@ -1,59 +1,83 @@
 "use client";
+
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
-import NavbarLayoutFloatingInline from '@/components/navigation/NavbarLayoutFloatingInline';
+import NavbarLayoutFloatingOverlay from '@/components/navigation/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay';
 import SplitHero from '@/components/sections/layouts/hero/SplitHero';
-import SocialsAbout from '@/components/sections/layouts/about/SocialsAbout';
-import HowToBuy2D from '@/components/sections/layouts/howtobuy/2DHTB';
-import TextGridTokenomics from '@/components/sections/layouts/tokenomics/TextGridTokenomics';
-import FooterBase from '@/components/footer/FooterBase';
+import SplitAbout from '@/components/sections/layouts/about/SplitAbout';
+import HowToBuy3D from '@/components/sections/layouts/howtobuy/3DHTB';
+import NumberGridTokenomics from '@/components/sections/layouts/tokenomics/NumberGridTokenomics';
+import BentoFAQ from '@/components/sections/layouts/faq/BentoFAQ';
+import FooterLogo from '@/components/footer/FooterLogo';
 
 export default function Home() {
   return (
-    <SiteThemeProvider theme={{ styleVariant: 'futuristicAndOutOfBox', colorTemplate: 2, textAnimation: 'slide' }}>
+    <SiteThemeProvider theme={{ styleVariant: 'funAndTrendy', colorTemplate: 2, textAnimation: 'slide' }}>
       <div id="nav" data-section="nav">
-        <NavbarLayoutFloatingInline
+        <NavbarLayoutFloatingOverlay
           logoSrc="/images/logo.svg"
-          navItems={[{ name: 'Hero', id: 'hero' }, { name: 'About', id: 'about' }, { name: 'How to Buy', id: 'how-to-buy' }, { name: 'Tokenomics', id: 'tokenomics' }, { name: 'Footer', id: 'footer' }]}
+          logoWidth={120}
+          logoHeight={40}
+          navItems={[
+            { name: "Hero", id: "hero" },
+            { name: "About", id: "about" },
+            { name: "How to Buy", id: "how-to-buy" },
+            { name: "Tokenomics", id: "tokenomics" },
+            { name: "FAQ", id: "faq" },
+            { name: "Footer", id: "footer" }
+          ]}
           buttonText="Get Started"
-          className="bg-transparent text-white"
-          buttonClassName="bg-white text-black"
+          onButtonClick={() => console.log('CTA Clicked')}
         />
       </div>
-      <div id="hero" data-section="hero" className="scroll-mt-24">
+      <div id="hero" data-section="hero">
         <SplitHero
           title="Welcome to Xeven Solutions"
-          subtitle="Empowering the future of SaaS solutions"
+          subtitle="Your gateway to innovative SaaS solutions"
           primaryButtonText="Get Started"
-          onPrimaryButtonClick={() => console.log('Primary button clicked')}
+          onPrimaryButtonClick={() => console.log('Primary Button Clicked')}
           secondaryButtonText="Learn More"
-          onSecondaryButtonClick={() => console.log('Secondary button clicked')}
+          onSecondaryButtonClick={() => console.log('Secondary Button Clicked')}
         />
       </div>
       <div id="about" data-section="about">
-        <SocialsAbout
-          title="About Xeven"
-          descriptions={["Innovative solutions to help you thrive.", "Hey there everoenen", "Saralalalalala"]}
-        />
+        <SplitAbout
+          description="At Xeven Solutions, we deliver the best SaaS applications with a focus on user experience and efficiency. Our team is dedicated to ensuring you get the most out of our tools."/>
       </div>
       <div id="how-to-buy" data-section="how-to-buy">
-        <HowToBuy2D variant="simple" />
+        <HowToBuy3D
+          title="How to Buy"
+          steps={[
+            { title: "Step 1", description: "Register on our platform", image: "/images/placeholder1.avif", position: "left", isCenter: false },
+            { title: "Step 2", description: "Choose your plan", image: "/images/placeholder2.avif", position: "center", isCenter: true },
+            { title: "Step 3", description: "Complete your purchase", image: "/images/placeholder3.avif", position: "right", isCenter: false }
+          ]}
+        />
       </div>
       <div id="tokenomics" data-section="tokenomics">
-        <TextGridTokenomics
-          title="Our Tokenomics"
-          description="Explore our sustainable token model"
-          tokenData={[{ value: "10M", description: "Total Supply" }, { value: "$1", description: "Initial Token Price" }, { value: "20%", description: "Liquidity" }]}
+        <NumberGridTokenomics
+          title="Tokenomics Overview"
+          description="Understanding our token model is key to engaging with Xeven."
+          kpiItems={[
+            { value: "100M", description: "Total Supply" },
+            { value: "40%", description: "Available in Market" },
+            { value: "20%", description: "Reserved for Development" }
+          ]}
+        />
+      </div>
+      <div id="faq" data-section="faq">
+        <BentoFAQ
+          items={[
+            { title: "What is Xeven?", content: "Xeven is a cutting-edge SaaS platform designed for..." },
+            { title: "How do I contact support?", content: "You can reach our support team via the contact form on the website." }
+          ]}
         />
       </div>
       <div id="footer" data-section="footer">
-        <FooterBase
+        <FooterLogo
           logoSrc="/images/logo.svg"
-          logoWidth={100}
-          logoHeight={50}
-          columns={[{ title: 'Resources', items: [{ label: 'FAQ', onClick: () => console.log('FAQ clicked') }, { label: 'Support', onClick: () => console.log('Support clicked') }] }, { title: 'Company', items: [{ label: 'About Us', onClick: () => console.log('About Us clicked') }, { label: 'Privacy Policy', onClick: () => console.log('Privacy Policy clicked') }] }, { title: 'Connect', items: [{ label: 'Twitter', onClick: () => console.log('Twitter clicked') }, { label: 'LinkedIn', onClick: () => console.log('LinkedIn clicked') }] }]}
-          copyrightText="© 2023 Xeven Solutions"
-          onPrivacyClick={() => console.log('Privacy Policy clicked')}
-          className="footer-class"
+          logoAlt="Xeven Logo"
+          logoText="Xeven Solutions"
+          className="footer"
         />
       </div>
     </SiteThemeProvider>
