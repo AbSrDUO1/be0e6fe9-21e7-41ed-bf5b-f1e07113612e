@@ -12,7 +12,7 @@ export default function Home() {
     <SiteThemeProvider theme={{ styleVariant: 'futuristicAndOutOfBox', colorTemplate: 2, textAnimation: 'slide' }}>
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
-          logoSrc="/images/logo.svg"
+          logoSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_32Sjpo9ZLWlVS5JxRw9EagJf0Fo/tmp/a-logo-for-chess-1759740894902-f32785d7.jpg"
           navItems={[{ name: 'Hero', id: 'hero' }, { name: 'About', id: 'about' }, { name: 'How to Buy', id: 'how-to-buy' }, { name: 'Tokenomics', id: 'tokenomics' }, { name: 'Footer', id: 'footer' }]}
           buttonText="Get Started"
           className="bg-transparent text-white"
