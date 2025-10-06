@@ -32,7 +32,7 @@ export default function Home() {
       <div id="about" data-section="about">
         <SocialsAbout
           title="About Xeven"
-          descriptions={["Innovative solutions to help you thrive.", "Reliable 24/7 support to guide you through.", "Secure and confident SaaS applications."]}
+          descriptions={["Innovative solutions to help you thrive.", "Hey there everoenen", "Saralalalalala"]}
         />
       </div>
       <div id="how-to-buy" data-section="how-to-buy">
